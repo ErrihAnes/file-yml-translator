@@ -1,0 +1,869 @@
+commands:
+  messages:
+    name: "messages"
+    description: "Shows the number of messages sent by a member."
+    options:
+      member:
+        name: "member"
+        description: "The member to show messages for."
+  messages-admin:
+    name: "messages-admin"
+    description: "Manages the message counter."
+    add:
+      name: "add"
+      description: "Adds a number of messages to a member's message count."
+      options:
+        member:
+          name: "member"
+          description: "The member to add messages to."
+        amount:
+          name: "amount"
+          description: "The number of messages to add."
+    remove:
+      name: "remove"
+      description: "Removes a number of messages to a member's message count."
+      options:
+        member:
+          name: "member"
+          description: "The member to remove messages from."
+        amount:
+          name: "amount"
+          description: "The number of messages to remove."
+    reset:
+      name: "reset"
+      description: "Resets a member's message count."
+      options:
+        member:
+          name: "member"
+          description: "The member to reset messages for."
+    reset-all:
+      name: "reset-all"
+      description: "Resets all message counts."
+    settings:
+      name: "settings"
+      description: "Configure the message counter."
+    enable:
+      name: "enable"
+      description: "Enable the message counter."
+    disable:
+      name: "disable"
+      description: "Disable the message counter."
+
+  greet:
+    name: "greet"
+    description: "Manages the greeting feature."
+    toggle:
+      name: "toggle"
+      description: "Toggle the greeting feature."
+      options:
+        state:
+          name: "state"
+          description: "The state to set the greeting feature to."
+    delafter:
+      name: "delafter"
+      description: "Set the delay after which the greeting message will be deleted."
+      options:
+        delay:
+          name: "delay"
+          description: "The delay in seconds."
+    message:
+      name: "message"
+      description: "Set the greeting message."
+      options:
+        message:
+          name: "message"
+          description: "The greeting message."
+    reset:
+      name: "reset"
+      description: "Reset the greeting configurations."
+    settings:
+      name: "settings"
+      description: "Configure the greeting feature."
+
+  ping:
+    name: "ping"
+    description: "Show bot latency."
+  timestamp:
+    name: "timestamp"
+    description: "Give you the Discord formatted timestamp for a time."
+    options:
+      time:
+        name: "time"
+        description: "The time to get the formatted timestamp for. (seconds)"
+  timedif:
+    name: "timedif"
+    description: "Shows the time difference between two messages."
+    options:
+      first-message-id:
+        name: "first-message-id"
+        description: "The first message to compare."
+      second-message-id:
+        name: "second-message-id"
+        description: "The second message to compare."
+  timer:
+    name: "timer"
+    description: "Creates a timer."
+    options:
+      time:
+        name: "time"
+        description: "The time to create the timer for."
+      timer-name:
+        name: "timer-name"
+        description: "The name of the timer."
+  leaderboard:
+    name: "leaderboard"
+    description: "Shows the top 10 members with the most number of messages sent."
+  embed:
+    name: "embed"
+    description: "Creates and configures an embed."
+  snipe-toggle:
+    name: "snipe-toggle"
+    description: "Toggle the ability for other users to snipe you."
+    options:
+      state:
+        name: "state"
+        description: "The state to set the ability to snipe to."
+  membercount:
+    name: "membercount"
+    description: "Shows the number of members in the server."
+  userinfo:
+    name: "userinfo"
+    description: "Shows information about a member."
+    options:
+      member:
+        name: "member"
+        description: "The member to show information about."
+  avatar:
+    name: "avatar"
+    description: "Shows the avatar of a member."
+    options:
+      member:
+        name: "member"
+        description: "The member you want to show the avatar of."
+  afk:
+    name: "afk"
+    description: "Toggle your afk status."
+    options:
+      all-servers:
+        name: "all-servers"
+        description: "Toggle your afk status in all servers."
+      reason:
+        name: "reason"
+        description: "The reason for your afk status."
+  afk-toggle:
+    name: "afk-toggle"
+    description: "Toggle the afk feature in the server."
+    options:
+      state:
+        name: "state"
+        description: "The state to set the afk feature to."
+  clear-afk:
+    name: "clear-afk"
+    description: "Clears the afk status of a member."
+    options:
+      member:
+        name: "member"
+        description: "The member to clear the afk status of."
+  movech:
+    name: "movech"
+    description: "Move a channel to another category."
+    options:
+      category-id:
+        name: "category-id"
+        description: "The category to move the channel to."
+  purge-channel:
+    name: "purge-channel"
+    description: "Deletes a channel (nuke it) and clones it to remove all the pings."
+    options:
+      channel:
+        name: "channel"
+        description: "The channel to nuke."
+  clone:
+    name: "clone"
+    description: "Clones a channel."
+    options:
+      channel:
+        name: "channel"
+        description: "The channel to clone."
+  purge:
+    name: "purge"
+    description: "Deletes the number of specified messages from the channel."
+    options:
+      amount:
+        name: "amount"
+        description: "The number of messages to delete."
+      user:
+        name: "user"
+        description: "Remove only messages from the user."
+      bots:
+        name: "bots"
+        description: "Allow removing messages from bots."
+      humans:
+        name: "humans"
+        description: "Allow removing messages from humans."
+      embeds:
+        name: "embeds"
+        description: "Allow removing messages with embeds."
+      attachments:
+        name: "attachments"
+        description: "Allow removing messages with attachments."
+  translate:
+    name: "translate"
+    description: "Translates a message."
+    options:
+      text:
+        name: "text"
+        description: "The text to translate."
+      target-language:
+        name: "target-language"
+        description: "The target language."
+      source-language:
+        name: "source-language"
+        description: "The source language."
+      hide-response:
+        name: "hide-response"
+        description: "Set the response to ephemeral."
+  gstart:
+    name: "gstart"
+    description: "Starts a new giveaway."
+    options:
+      duration:
+        name: "duration"
+        description: "The duration of the giveaway."
+      winners:
+        name: "winners"
+        description: "The number of winners."
+      prize:
+        name: "prize"
+        description: "The prize of the giveaway."
+  gblacklist:
+    name: "gblacklist"
+    description: "Blacklists a user from giveaways."
+    options:
+      user:
+        name: "user"
+        description: "The user to blacklist."
+  gwin-role:
+    name: "gwin-role"
+    description: "Manages the giveaway win roles."
+  gcheck:
+    name: "gcheck"
+    description: "Checks if a user can join a giveaway."
+    options:
+      giveaway-id:
+        name: "giveaway-id"
+        description: "The message id of the giveaway."
+      member:
+        name: "member"
+        description: "The member to check."
+  gcreate:
+    name: "gcreate"
+    description: "Creates a new giveaway."
+    options:
+      channel:
+        name: "channel"
+        description: "The channel to create the giveaway in."
+  glist:
+    name: "glist"
+    description: "Lists all the giveaways in the server."
+  greroll:
+    name: "greroll"
+    description: "Re-rolls a giveaway."
+    not-ended: "This giveaway is not ended."
+    options:
+      giveaway-id:
+        name: "giveaway-id"
+        description: "The message id of the giveaway."
+  gend:
+    name: "gend"
+    description: "Ends a giveaway."
+    options:
+      giveaway-id:
+        name: "giveaway-id"
+        description: "The message id of the giveaway."
+  gdelete:
+    name: "gdelete"
+    description: "Deletes a giveaway."
+    options:
+      giveaway-id:
+        name: "giveaway-id"
+        description: "The message id of the giveaway."
+  pick:
+    name: "pick"
+    description: "Pick a random winners from reactions on a message."
+    options:
+      message-id:
+        name: "message-id"
+        description: "The id of the message with reactions to pick from."
+      winners:
+        name: "winners"
+        description: "The number of winners to pick from reactions."
+  wins:
+    name: "wins"
+    description: "Shows the number of giveaways won by a member."
+    options:
+      member:
+        name: "member"
+        description: "The member to show giveaways won by."
+  vote:
+    name: "vote"
+    description: "Vote for Apollo!"
+  steal:
+    name: "steal"
+    description: "Add an emoji or a sticker to the server."
+    options:
+      source:
+        name: "source"
+        description: "The source of the emoji or sticker."
+  rename:
+    name: "rename"
+    description: "Rename a channel."
+    options:
+      channel:
+        name: "channel"
+        description: "The channel to rename."
+      new-name:
+        name: "new-name"
+        description: "The new name for the channel."
+  claimtime:
+    name: "claimtime"
+    description: "Gets the time you have to claim your rewards."
+    options:
+      member:
+        name: "member"
+        description: "The member or role to get the time for."
+  claimtime-admin:
+    name: "claimtime-admin"
+    description: "The admin command for claimtime."
+    add:
+      name: "add"
+      description: "Configure the time for a role."
+      options:
+        role:
+          name: "role"
+          description: "The role to add the time for."
+        duration:
+          name: "duration"
+          description: "The duration of the time."
+        override:
+          name: "override"
+          description: "Override the time for the role."
+    remove:
+      name: "remove"
+      description: "Remove the time for a role."
+      options:
+        role:
+          name: "role"
+          description: "The role to remove the claimtime for."
+    display:
+      name: "display"
+      description: "Display the claimtime for all roles."
+  snipe:
+    name: "snipe"
+    description: "Shows deleted messages."
+    options:
+      argument:
+        name: "argument"
+        description: "Arguments for this command."
+      channel:
+        name: "channel"
+        description: "The channel to show deleted messages from."
+      index:
+        name: "index"
+        description: "The index of the deleted message to show."
+      all:
+        name: "all"
+        description: "Show all deleted messages in the channel."
+  variables:
+    name: "variables"
+    description: "Show available variables."
+  help:
+    name: "help"
+    description: "Shows help for commands."
+  roleicon:
+    name: "roleicon"
+    description: "Sets the icon of a role."
+    options:
+      role:
+        name: "role"
+        description: "The role to set the icon of."
+      emoji:
+        name: "emoji"
+        description: "The emoji to set the role icon to."
+  Time Difference:
+    name: "Time Difference"
+    description: "Shows the time difference between two messages."
+  Pick Random Reaction:
+    name: "Pick Random Reaction"
+    description: "Pick a random reaction from a message."
+  Translate:
+    name: "Translate"
+    description: "Translate a message."
+  Steal Sticker/Emoji:
+    name: "Steal Sticker/Emoji"
+    description: "Steal a sticker or emoji from a message."
+
+messagecounter:
+  ranking:
+    title: "Messages Leaderboard"
+    empty: "There are no messages sent in this server or you did not enabled the message counter yet! You can enable it using ``/message-admin enable``."
+  view:
+    title: "Messages"
+    description: "{member} has sent **{amount}** messages in this server."
+  add:
+    title: "Messages Added"
+    description: "Added **{amount}** messages to {member}. Total messages: **{result}**."
+  remove:
+    title: "Messages Removed"
+    description: "Removed **{amount}** messages to {member}. Total messages: **{result}**."
+  reset:
+    title: "Messages Reset"
+    description: "Successfully reset {member}'s messages to **0**."
+    confirm:
+      title: "Are you sure?"
+      description: "Continuing will permanently delete all messages counter. This action cannot be undone."
+      yes-button: "Yes"
+      no-button: "No"
+      success: "Successfully reset all messages counters to **0**."
+      cancel: "Reset cancelled."
+
+  enable: "The message counter has been enabled in this server."
+  disable: "The message counter has been disabled in this server."
+  already-enabled: "The message counter is already enabled in this server."
+  already-disabled: "The message counter is already disabled in this server."
+  disabled:
+    title: "Message Counter Disabled"
+    description: "⚠️ The message counter feature is disabled for this server. Ask an administrator to execute this command to enable it! ```/messages enable```"
+
+greeting:
+  set-message: "The greeting message has been set to ``{message}``."
+  set-delete-delay: "The greeting delete delay has been set to **{delay}** seconds."
+  reset: "Reset greet configurations to defaults. Note: all greet channels are also disabled."
+  enable: "The greeting feature is now **enabled** in this server."
+  disable: "The greeting feature is now **disabled** in this server."
+
+timedifference:
+  title: "Time Difference"
+  invalid-input: "Please specify valid message id."
+
+timestamp:
+  title: "Timestamps"
+  description: "Here are some timestamps for the time that you can copy and paste in your messages."
+  invalid-input: "Please specify a valid time."
+
+embed:
+  finish: "Finish"
+  finish-message: "Choose export actions for current embed:"
+  finish-channel: "Choose channel to send embed to:"
+  finish-channel-success: "The embed has been sent to {channel}."
+  field-not-found: ":x: Field not found!"
+  select-field: "You have selected the \"{field}\" field. What would you like to do?"
+  title:
+    name: "Title"
+    description: "The title of the embed."
+    placeholder: "Title"
+  description:
+    name: "Description"
+    description: "The description of the embed."
+    placeholder: "Description"
+  color:
+    name: "Color"
+    description: "The color of the embed."
+    placeholder: "Color"
+  thumbnail:
+    name: "Thumbnail"
+    description: "The thumbnail of the embed."
+    placeholder: "Thumbnail"
+  image:
+    name: "Image"
+    description: "The image of the embed."
+    placeholder: "Image"
+  author:
+    name: "Author"
+    description: "The author of the embed."
+    name-placeholder: "Author Name"
+    icon-placeholder: "Author Icon"
+  footer:
+    name: "Footer"
+    description: "The footer of the embed."
+    text-placeholder: "Footer Text"
+    icon-placeholder: "Footer Icon"
+  add-field:
+    name: "Add Field"
+    description: "Add a new field to the embed."
+    name-placeholder: "Field Name"
+    value-placeholder: "Field Value"
+  add-field-inline:
+    name: "Add Inline Field"
+    description: "Add a new inline field to the embed."
+    name-placeholder: "Field Name"
+    value-placeholder: "Field Value"
+  field-edit:
+    edit: "Edit"
+    delete: "Delete"
+
+membercount:
+  title: "Members"
+  total: "Total: **{total}**"
+
+avatar:
+  global:
+    title: "Global Avatar"
+    url: "[Global Avatar]({url})"
+  server:
+    title: "Server Avatar"
+    url: "[Server Avatar]({url})"
+
+afk:
+  enable: "The afk feature is now **enabled** in this server."
+  disable: "The afk feature is now **disabled** in this server."
+  invalid-reason: "Please specify a valid reason for your afk status."
+  disabled-on-guild: "The afk feature is disabled in this server."
+  already-afk: "You are already afk."
+  mention: "{name} is currently AFK for **{reason}** - {time}."
+  set:
+    title: "AFK Set!"
+    description:
+      all: "You are now afk in all servers. Reason: **{reason}**"
+      guild: "You are now afk in this server. Reason: **{reason}**"
+  end:
+    message: "Welcome back, {name}! I removed your AFK. You were AFK for {time}."
+    title: "You received {amount} mentions"
+    jump: "Click to view message"
+
+clear-afk:
+  disabled-on-guild: "The afk feature is disabled in this server."
+  try-to-all-servers: "This user is afk in all servers. If you wants disable this, please use `/afk-toggle`."
+  no-afk: "This user is not afk."
+  success: "Successfully cleared the afk status of {member}."
+
+movechannel:
+  invalid-input: "Please specify a valid category id."
+  category-not-found: "The specified category was not found."
+  invalid-channel-type: "The specified channel is not a text channel."
+  done: "Channel moved successfully."
+
+purge:
+  result: "Successfully purged **{amount}** messages."
+
+purge-channel:
+  invalid-channel-type: "The specified channel is not a text channel."
+  community-channel: "The specified channel is a community channel."
+  preparing: "Preparing to purge channel..."
+  finish: "This channel has been purged by {author}."
+  cancel: "Purge cancelled."
+  confirm:
+    title: "Are you sure?"
+    description: "Continuing will permanently delete all messages from {channel}. This action cannot be undone."
+    yes-button: "Yes"
+    no-button: "No"
+
+clone:
+  invalid-channel-type: "The specified channel is not valid for copy."
+  done: "Channel cloned successfully in {channel}."
+
+giveaway:
+  not-found: "This giveaway no longer exists or has expired."
+  already-joined: "You already joined this giveaway."
+  not-allowed: "You do not meet the requirements to enter this giveaway."
+  already-ended: "This giveaway is already ended."
+  join-button: "Join Giveaway"
+  invalid-duration: "Please specify a valid duration."
+  invalid-channel: "Please specify a valid channel."
+  invalid-winners: "Please specify a valid number of winners."
+  started: ":white_check_mark: The giveaway has started at {message}."
+  joined: ":white_check_mark: You have successfully joined the giveaway."
+  no-blacklist: "There is no one blacklisted from giveaways in this server."
+  blacklisted: "You are blacklisted from giveaways in this server."
+  no-winner: "Winner couldn't be decided!"
+  winners: ":tada: Congratulations, {winners}! You won **{prize}**!"
+  start:
+    not-enough-arguments: "Please specify a valid duration and number of winners."
+  blacklist:
+    added: "Blacklisted {user} from all giveaways in this server successfully."
+    removed: "Unblacklisted {user} from all giveaways in this server successfully."
+    title: "List of users blacklisted from giveaways in this server."
+    description: "{mentions}"
+  win-role:
+    title: "Giveaway Win Roles"
+    description: "Winner roles are roles which will be added to giveaway winners. Current roles:\n{roles}"
+  check:
+    invalid-input: "Please specify a valid giveaway id."
+    not-found: "This giveaway no longer exists or has expired."
+    no-conditions: "This giveaway has no conditions."
+    description: "**Requirements:**"
+    allowed: "You can participate in the giveaway!"
+    not-allowed: "You cannot participate in the giveaway."
+  wins:
+    title: "Giveaway Wins"
+    description: "{member} won **{amount}** giveaways in this server."
+  create:
+    invalid-input: "Please specify a valid channel id."
+    not-set: "Not set"
+    invalid-start: "You have not finished the configuration."
+    rule:
+      any: "Any"
+      all: "All"
+    preview:
+      title: "Giveaway Setup"
+      channel: "**Channel**: {channel}"
+      winners: "**Winners**: {winners}"
+      prize: "**Prize**: {prize}"
+      duration: "**Duration**: {duration}"
+    menu:
+      edit: "Edit"
+      start: "Start Giveaway"
+    requirement:
+      placeholder: "Add a requirement"
+      conflict: "This requirement conflicts with another requirement."
+      message-count:
+        name: "Message Count"
+        description: "Must have sent a certain number of messages."
+        title: "Configure Message Count"
+        placeholder: "The number of messages user must send."
+      joined-days:
+        name: "Joined Days"
+        description: "Must stay in server for a certain number of days."
+        title: "Configure Joined Days"
+        placeholder: "The number of days user must stay in server."
+      account-age:
+        name: "Account Age"
+        description: "Discord account must be a certain days old."
+        title: "Configure Account Age"
+        placeholder: "The number of days Discord account must be."
+      role:
+        name: "Role"
+        description: "Must have a certain role."
+        message: "Select a role (start typing name of role if not shown in list)"
+        placeholder: "The role user must have."
+      not-role:
+        name: "Not Role"
+        description: "Must NOT have a certain role."
+        message: "Select a role (start typing name of role if not shown in list)"
+        placeholder: "The role user must not have."
+      no-win:
+        name: "No Win"
+        description: "Must not win any giveaway in this server."
+        title: "Configure No Win"
+        placeholder: "The number of giveaways user must not win."
+      bypass-role:
+        name: "Bypass Role"
+        description: "Users with this role can bypass all requirements."
+        message: "Select a role (start typing name of role if not shown in list)"
+        placeholder: "The role which can bypass all requirements."
+    edit:
+      title: "Edit Giveaway"
+      prize:
+        name: "Prize"
+        placeholder: "The prize of the giveaway"
+      winners:
+        name: "Winners"
+        placeholder: "The number of winners"
+      duration:
+        name: "Duration"
+        placeholder: "The duration of the giveaway"
+  list:
+    page-description: "Channel: {channel}\nHosted by: {host}\nWinners: ``{winners}``\nParticipants: ``{participants}``\nStart Time: <t:{start-date}:R>\nEnd Time: <t:{end-date}:R>\nEnded: {ended}\nMessage-ID: ``{message-id}``\nMessage: {message-url}"
+    title: "Giveaways List"
+    view-all: "View all giveaways"
+    empty: "There are no giveaways in this server."
+    stats:
+      header: "Giveaways"
+      ongoing: "Ongoing: ``{count}``\nTotal: ``{total}``"
+    description:
+      header: "Latest Giveaways"
+      entry: "``{prize}`` - Ended <t:{end-date}:R>, hosted by {host} on {channel}"
+  re-roll:
+    not-found: "This giveaway is not found. :warning: You must be in the correct channel."
+  end:
+    not-found: "This giveaway is not found. :warning: You must be in the correct channel."
+    already-ended: "This giveaway is already ended."
+  delete:
+    not-found: "This giveaway is not found. :warning: You must be in the correct channel."
+    done: "Successfully deleted the giveaway."
+    cancel: "Deletion cancelled."
+    title: "Are you sure to delete this giveaway?"
+    description: "Channel: {channel}\nHosted by: {host}\nWinners: ``{winners}``\nParticipants: ``{participants}``\nStart Time: <t:{start-date}:R>\nEnd Time: <t:{end-date}:R>\nEnded: {ended}\nMessage-ID: ``{message-id}``\nMessage: {message-url}"
+    confirm-button: "Confirm"
+    cancel-button: "Cancel"
+  condition:
+    header: "**Requirements**"
+    message-count: "Must have sent **{messages}** messages in this server."
+    joined-days: "Must stay in server for **{days}** days."
+    account-age: "Discord account must be **{days}** days old."
+    role: "Must have {role} role."
+    not-role: "Must **not** have {role} role."
+    no-win: "Must not win any giveaways in this server."
+    bypass-role: "Users with {role} role can bypass all requirements."
+    rule:
+      header: "**Requirements type**"
+      any: "Must satisfy **any** of the requirements."
+      all: "Must satisfy **all** of the requirements."
+  display:
+    message: ":tada: **GIVEAWAY** :tada:"
+    title: "{prize}"
+    description: "End {end-date}\nHosted by {host}\nParticipants: {participants}"
+    win-description: "Ended {end-date}\nHosted by {host}\nParticipants: {participants}\n**Winners**: {winners}"
+pick:
+  invalid-input: "Please specify a valid message id."
+  chat-bad-syntax: "Invalid command syntax."
+  not-found: "This message no longer exists."
+  no-reactions: "There are no reactions on this message."
+  not-enough: "There are not enough reactions to pick winner(s)."
+  done-one: ":tada: The winner is {winners}!"
+  done-many: ":tada: The winners are {winners}!"
+
+userinfo:
+  title: "User Information"
+  info:
+    header: "Account Info"
+    created: "Created: <t:{date}:R> (<t:{date}:f>)"
+    joined: "Joined: <t:{date}:R> (<t:{date}:f>)"
+  badges:
+    header: "Badges"
+  roles:
+    title: "Roles"
+  button:
+    avatar: "Avatar"
+    roles: "Roles"
+
+vote:
+  title: "Vote for Apollo!"
+  description: "Vote for Apollo in top.gg!"
+  button: "Click to Vote"
+
+rename:
+  invalid-input: "Please specify a valid channel."
+  done: "Successfully renamed the channel {channel}."
+
+steal:
+  no-permission: "I don't have permission to add emojis or stickers to the server. Please add me the permission **Manage Expressions**."
+  invalid-source: "Please specify a valid source. It must be a link to an image, an emoji or a sticker."
+  unable-to-steal: "I am unable to download this source, please verify your source is valid or try again later."
+  sticker:
+    success: ":white_check_mark: Sticker added successfully to the server."
+    failure: ":x: Sticker could not be added to the server. Your file is too big!"
+    invalid-name: ":x: The sticker name must be between 2 and 32 characters long. The description must be between 2 and 100 characters long."
+  emoji:
+    success: ":white_check_mark: Emoji added successfully to the server."
+    failure: ":x: Emoji could not be added to the server. Your file is too big!"
+    invalid-name: ":x: The emoji name must be between 2 and 32 characters long."
+
+roleicon:
+  no-permission: "I can't modify a role that is higher or equal in hierarchy."
+  feature-missing: "**Role Icon** feature is not enabled in this server."
+  removed: "The role icon has been removed."
+  done: "The role icon has been set."
+
+translate:
+  invalid-language: "Please specify a valid language."
+  empty-text: "Please specify a valid message to translate."
+  error:
+    title: "Translation Error"
+    description: "An error occurred while translating the message."
+  title: "{source} to {target}"
+
+snipe:
+  empty: "There are no deleted messages in this channel."
+  index-not-found: "There is no deleted message at this index."
+  tip: "**TIP:** Nobody can snipe you if you use the command /snipe-toggle."
+  enable: "Other users will now be able to snipe you. Use this command anytime to toggle."
+  disable: "Other users will now be unable to snipe you. Use this command anytime to toggle."
+  one:
+    title: "In {channel}, <t:{date}:R>"
+    footer: "Deleted at"
+  many:
+    title: "Sniped messages in {channel}"
+    entry: "{author}, **deleted at** <t:{date}:R>: {content}"
+
+variables:
+  title: "Greet message variables"
+  description: "These variables can be used in place of text in ``/greet message``."
+  placeholder:
+    server_name: "The name of the server"
+    user_tag: "The tag of the user"
+    user_name: "The name of the user"
+    mc: "The member count of the server"
+    member_name: "The name of the member"
+    mention: "The mention of the user"
+
+timer:
+  invalid-time-format: "Please specify a valid time."
+
+help:
+  title: "Help"
+  categories: "Categories"
+  category:
+    placeholder: "Choose a category to view its commands"
+    giveaway:
+      header: "Giveaways"
+      description: "Commands for giveaways."
+    utility:
+      header: "Utility"
+      description: "Commands for utility."
+    greeter:
+      header: "Greeter"
+      description: "Commands for greeter."
+    message_counter:
+      header: "Message Counter"
+      description: "Commands for message counter."
+    afk:
+      header: "AFK"
+      description: "Commands for AFK."
+  button:
+    support: "Support"
+    invite: "Invite"
+    documentation: "Documentation"
+
+claimtime:
+  title:
+    member: "Claim time for {member} is {time}"
+    role: "Claim time for {role}"
+  description: "**Total claimtime:** `{total}`"
+  description-override: "**Override role:** {role} (`{time}`)"
+  description-entry: "{role} **:** (`{time}`)"
+  invalid-duration-format: "Please specify a valid time."
+  invalid-mention: "Please specify a valid member or role."
+  override-confirm:
+    title: "**Do you want this role to override all roles?**"
+    description: "- `Yes`: everyone will strictly get {time}, ignoring all other roles they have.\n- `No` : Adds {time} with claim times of other roles to get final claim time."
+    yes-button: "Yes"
+    no-button: "No"
+  result:
+    title: "Claimtime updated for {role}"
+    description: "- Claimtime has been updated for {role} to **{time}**.\n- Override has been **{override}**."
+  remove:
+    title: "Claimtime removed for {role}"
+    description: "Claimtime has been removed for {role}."
+  display:
+    title: "Claimtime configuration for {guild}"
+    description-no-data: "No claimtime configured for roles yet.\n- Use `/claimtime-admin add <role> <time>` to add claim time."
+  role:
+    description: "> - Configured claimtime for {role} is {time}.\n\n**Override: {override}**\n> {override-message}"
+    override-enabled: "Members will strictly get {time}, ignoring their other roles."
+    override-disabled: "{time} will be added along with claimtimes of other roles."
+    unknown-title: "Unknown Claimtime"
+    unknown-description: "No claimtime configured for {role} yet.\n- Use `/claimtime-admin add {role} <time>` to add claim time."
+
+pagination:
+  footer: "Page {current} of {max}"
+
+permissions:
+  title: "Insufficient permissions!"
+  description: "Reason: {reason}\nRequired permissions: {permission}"
+
+command-chat:
+  permission:
+    title: "Insufficient permissions!"
+    description: "You don't have the required permissions to use this command!\nRequired permissions: {permission}"
+  bad-usage:
+    title: "The syntax of this command is incorrect!"
+    description: "Please use the syntax: ``{usage}``"
+
+misc:
+  message-mention: "Hello {author}! Try /help for more info!"
+  future-loading: ":hourglass_flowing_sand: Loading..."
+  not-owner: ":x: You are not the owner of this interaction!"
+  interaction-failed:
+    title: ":x: Interaction failed!"
+    description: "The interaction you are attempting to perform has failed. Check the parameters you specified.\nIf the problem persists, contact support."

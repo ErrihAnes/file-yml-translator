@@ -1,0 +1,72 @@
+commands:
+  messages:
+    name: съобщения
+    description: Показва броя на изпратените съобщения от член.
+    options:
+      member:
+        name: член
+        description: Членът, за който да се показват съобщенията.
+  ping:
+    name: ping
+    description: Покажи забавяне на бота.
+  greet:
+    name: поздрав
+    description: Управлява функцията за поздрав.
+    toggle:
+      name: превключване
+      description: Превключете функцията за поздрав.
+messagecounter:
+  ranking:
+    title: Таблица със съобщенията
+    empty: Няма изпратени съобщения в този сървър или още не сте активирали брояча на съобщения! Можете да го активирате, използвайки ``/message-admin enable``.
+  view:
+    title: Съобщения
+    description: '{member} е изпратил **{amount}** съобщения в този сървър.'
+  reset:
+    confirm:
+      title: Сигурен ли си?
+      description: Продължаването ще изтрие перманентно всички съобщения на брояча. Това действие не може да бъде отменено.
+      yes-button: Да
+      no-button: Не
+greeting:
+  set-message: Поздравителното съобщение е зададено на ``{message}``.
+  enable: Функцията за поздрави вече е **активирана** в този сървър.
+embed:
+  title:
+    name: Заглавие
+    description: Заглавието на вграденото съдържание.
+  description:
+    name: Описание
+    description: Описанието на вграждането.
+  add-field:
+    name: Добави поле
+    description: Добавете ново поле към вграденото съобщение.
+    name-placeholder: Име на полето
+    value-placeholder: Стойност на полето
+afk:
+  mention: '{name} е в момента отсъстващ по **{reason}** - {time}.'
+  set:
+    title: AFK Зададено!
+    description:
+      guild: 'В момента сте отсъстващ в този сървър. Причина: **{reason}**'
+giveaway:
+  join-button: Присъединете се към раздаването.
+  winners: ':tada: Поздравления, {winners}! Вие спечелихте **{prize}**!'
+  display:
+    message: ':tada: **НАГРАДА** :tada:'
+    title: '{награда}'
+    description: 'Крайна дата {end-date}
+
+      Домакин {host}
+
+      Участници: {participants}'
+misc:
+  message-mention: Здравей {author}! Опитай /help за повече информация!
+  future-loading: ':hourglass_flowing_sand: Зареждане...'
+  not-owner: ':x: Не сте собственик на това взаимодействие!'
+example_list:
+- Първият елемент в списък.
+- Вторият елемент с {placeholder}.
+- nested_dict_in_list:
+    key1: Стойност едно
+    key2: Двойка

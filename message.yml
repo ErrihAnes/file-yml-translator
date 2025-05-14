@@ -1,0 +1,76 @@
+# message_test.yml (Version réduite pour les tests)
+commands:
+  messages:
+    name: "messages"
+    description: "Shows the number of messages sent by a member."
+    options:
+      member:
+        name: "member"
+        description: "The member to show messages for."
+  ping:
+    name: "ping"
+    description: "Show bot latency."
+  greet:
+    name: "greet"
+    description: "Manages the greeting feature."
+    toggle:
+      name: "toggle"
+      description: "Toggle the greeting feature."
+
+messagecounter:
+  ranking:
+    title: "Messages Leaderboard"
+    empty: "There are no messages sent in this server or you did not enabled the message counter yet! You can enable it using ``/message-admin enable``."
+  view:
+    title: "Messages"
+    description: "{member} has sent **{amount}** messages in this server."
+  reset:
+    confirm:
+      title: "Are you sure?"
+      description: "Continuing will permanently delete all messages counter. This action cannot be undone."
+      yes-button: "Yes"
+      no-button: "No"
+
+greeting:
+  set-message: "The greeting message has been set to ``{message}``."
+  enable: "The greeting feature is now **enabled** in this server."
+
+embed:
+  title:
+    name: "Title"
+    description: "The title of the embed."
+  description:
+    name: "Description"
+    description: "The description of the embed."
+  add-field:
+    name: "Add Field"
+    description: "Add a new field to the embed."
+    name-placeholder: "Field Name"
+    value-placeholder: "Field Value"
+
+afk:
+  mention: "{name} is currently AFK for **{reason}** - {time}."
+  set:
+    title: "AFK Set!"
+    description:
+      guild: "You are now afk in this server. Reason: **{reason}**"
+
+giveaway:
+  join-button: "Join Giveaway"
+  winners: ":tada: Congratulations, {winners}! You won **{prize}**!"
+  display:
+    message: ":tada: **GIVEAWAY** :tada:"
+    title: "{prize}"
+    description: "End {end-date}\nHosted by {host}\nParticipants: {participants}"
+
+misc:
+  message-mention: "Hello {author}! Try /help for more info!"
+  future-loading: ":hourglass_flowing_sand: Loading..."
+  not-owner: ":x: You are not the owner of this interaction!"
+
+example_list:
+  - "First item in a list."
+  - "Second item with a {placeholder}."
+  - nested_dict_in_list:
+      key1: "Value one"
+      key2: "Value two"
